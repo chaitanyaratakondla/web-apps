@@ -1,0 +1,47 @@
+<%
+rand1 = rand(1..52)
+rand2 = rand(1..52)
+rand3 = rand(1..52)
+rand4 = rand(1..52)
+rand5 = rand(1..52)
+
+suits = ["spades","hearts","diamonds","clubs"]
+numbers = [2,3,4,5,6,7,8,9,10,"ace","jack","queen","king"]
+deck = []
+
+for loopvariable1 in suits
+    for loopvariable2 in numbers
+        card = "#{loopvariable2}_of_#{loopvariable1}"
+        deck.push(card)
+    end  
+end
+
+deck_shuffled = deck.shuffle
+hand = deck_shuffled[0,5]
+
+card1 = deck_shuffled[0]
+card2 = deck_shuffled[2]
+card3 = deck_shuffled[3]
+card4 = deck_shuffled[4]
+card5 = deck_shuffled[10]
+
+%>
+<h1>Here's your hand</h1>
+
+<ul>
+    <li><%=deck_shuffled[0]%> </li>
+    <li><%=card2%> </li>
+    <li><%=card3%> </li>
+    <li><%=card4%> </li>
+    <li><%=card5%> </li>
+</ul
+
+<p>
+<% for card in hand %>
+        <img src="/images/cards/<%=card%>.svg">
+    <% end %>
+</p>
+
+<p>
+    <a href="/cards">Pick another hand!</a>
+</p>

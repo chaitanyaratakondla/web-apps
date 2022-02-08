@@ -1,0 +1,9 @@
+<% contacts = Contact.all %>
+
+<h1>Here's everyone we know</h1>
+
+<ul>
+<% for loopvariable in contacts %>
+    <li><%=loopvariable.first_name%> <%=loopvariable.last_name%></li>
+    <% end %>
+</ul>
